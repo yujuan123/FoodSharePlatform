@@ -1,6 +1,6 @@
 //个人中心页 信息显示
 //
-const userCenterMessageShowed = (state='',action)=>{
+const userCenterMessageShowed = (state={},action)=>{
   switch(action.type){
     case 'USERCENTERMESSAGE_REQUESTED':
       return {
@@ -10,6 +10,10 @@ const userCenterMessageShowed = (state='',action)=>{
       return {
         username:action.userName,
         isCompleted:action.isCompleted
+      };
+    case 'USERMESSAGE_BLOCKED':
+      return {
+        isCompleted:false
       };
   }
   return state;

@@ -1,12 +1,21 @@
+/*
 import React ,{Component} from 'react';
 import UserWorkItem from './UserWorkItem';
 import {connect} from 'react-redux';
 class UserWorks extends Component{
   componentWillUpdate(nextProps){
-    if(nextProps.userCenterMessageShowed.username){
-      this.props.loadUserWorks(nextProps.userCenterMessageShowed.username);
+    if(nextProps.userCenterMessageShowed.isCompleted){
+      if(nextProps.userCenterMessageShowed.username){
+        console.log("作品中获取到"+nextProps.userCenterMessageShowed.username);
+        this.props.loadUserWorks(nextProps.userCenterMessageShowed.username);
+        this.props.blockUserWorks();
+      }
     }
   }
+  
+  
+  
+  
   render() {
     let userWorksShowed = this.props.userWorksShowed;
     console.log("作品展示 ："+userWorksShowed);
@@ -25,6 +34,11 @@ class UserWorks extends Component{
     )
   }
 }
+
+
+
+
+
 const mapStateToProps = (state)=>{
   return state;
 };
@@ -35,7 +49,13 @@ const mapDispatchToProps = (dispatch)=>({
       type:'USERWORKS_LOADED',
       username:userName
     })
+  },
+  blockUserWorks:()=>{
+    dispatch({
+      type:'USERWORKS_BLOCKED'
+    })
   }
 });
 const UserWorksPackage = connect(mapStateToProps,mapDispatchToProps)(UserWorks);
 export default UserWorksPackage;
+*/

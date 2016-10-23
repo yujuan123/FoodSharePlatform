@@ -13,6 +13,7 @@ import ImageUploaded from './ImageUploaded'
 import userCenterMessageShowed from './userCenterMessageShowed';
 import userWorksShowed from './userWorksShowed';
 import menuLoadedShowed from './menuLoadedShowed';
+import userCenterRedirect from './userCenterRedirect';
 const resultList = combineReducers({
     menus,
     menudetails,
@@ -24,7 +25,8 @@ const resultList = combineReducers({
     materialUploaded,
     userCenterMessageShowed,
     userWorksShowed,
-    menuLoadedShowed
+    menuLoadedShowed,
+    userCenterRedirect
 });
 
 export default resultList;

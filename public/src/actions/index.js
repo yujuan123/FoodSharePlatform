@@ -61,6 +61,7 @@ export const receiveMenuLoaded = (userName,isCompleted)=>{
   }
 };
 
+//用户中心确认
 export const getUserCenterMessage = ()=>{
   return (dispatch)=>{
     dispatch(requestUserCenterMessage());
@@ -69,11 +70,16 @@ export const getUserCenterMessage = ()=>{
         .end((err,res)=>{
           if(res.text){
             dispatch(receiveUserCenterMessage(res.text,true));//res.text 官网
+          }else{
+            dispatch({
+              type:'USERMESSAGE_REDIRECTED',
+              isRedirected:true
+            })
           }
         })
   }
 };
-//ji morning
+//上传菜谱确认
 export const getMenuLoaded = ()=>{
   return (dispatch)=>{
     dispatch(requestMenuLoaded());
@@ -99,6 +105,12 @@ export const deleteMaterial=(id)=>{
   return {
     type:'deleteMaterial',
     id
+  }
+};
+//login‘不动弹’
+export const redirectUserCenter = ()=>{
+  return {
+    type:'USERCENTER_REDIRECT'
   }
 };
 export const uploadImage=(file)=>{

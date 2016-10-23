@@ -12,7 +12,6 @@ router.use(cookieParser());
 
 //确认用户身份的合法性
 router.get('/verifyUserIdentity', (req, res)=> {
-  console.log(req.cookies.user);
   if (req.cookies.user) {
     Session.findOne({randomId: req.cookies.user}, (err, doc)=> {
       if (err) {
@@ -110,13 +109,7 @@ router.get('/:id', (req, res)=> {
     res.status(200).send(doc);
   })
 });
-//根据 username 返回一条数据
-router.get('/userCenter/:username', (req, res)=> {
-  User.findOne({username: req.params.username}, (err, doc)=> {
-    console.log(req.params.username);
-    res.status(200).send(doc);
-  })
-});
+
 router.get('/userWorks/:username',(req,res)=>{
   Menu.find({username:req.params.username},(err,doc)=>{
     if(err){
@@ -127,6 +120,14 @@ router.get('/userWorks/:username',(req,res)=>{
     }
   })
 });
+//根据 username 返回一条数据
+router.get('/userCenter/:username', (req, res)=> {
+  User.findOne({username: req.params.username}, (err, doc)=> {
+    console.log(req.params.username);
+    res.status(200).send(doc);
+  })
+});
+
 
 
 module.exports = router;
