@@ -1,9 +1,13 @@
 import mongoose from 'mongoose';
 import rawData from './fixture/raw-data';
 import Menu from '../models/Menu';
+import Session from '../models/Session';
+import User from '../models/User';
 
 const modelsMap = {
-  Menu
+  Menu,
+  Session,
+  User
 };
 
 let docs = Object.keys(rawData);

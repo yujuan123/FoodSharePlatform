@@ -1,10 +1,34 @@
 export default {
+  Session:[
+    {
+      username:'xxx',
+      password:'123456'
+    }
+  ],
+  User:[
+    {
+      username:'yujuan',
+      password:"hhxx12345",
+      phone:'15809216911',
+      regtime:'2016-8-13'
+    },
+    {
+      username:'duanxue',
+      password:"duanxue123",
+      phone:'15809216911',
+      regtime:'2016-8-23'
+    },
+    {
+      username:'zhanglei',
+      password:"zhanglei123",
+      phone:'15809216911',
+      regtime:'2016-8-25'
+    }
+  ],
   Menu: [
     {
       _id: '57b1c147201d920964e2bc01',
       username:'yujuan',
-      phone:'15809216911',
-      regtime:'2016-8-11',
       name: '茴香卤面',
       image: 'image/01.jpg',
       date: '2016-8-6',
@@ -41,9 +65,7 @@ export default {
     },
     {
       _id: '57b1c147201d920964e2bc02',
-      username:'duxue',
-      phone:'15809216911',
-      regtime:'2016-8-13',
+      username:'duanxue',
       name: '清蒸鲜鱼',
       image: 'image/07.jpg',
       date: '2016-8-10',
@@ -80,8 +102,6 @@ export default {
     }, {
       _id: '57b1c147201d920964e2bc03',
       username:'yujuan',
-      phone:'15809216911',
-      regtime:'2016-8-11',
       name: '鱼香肉丝',
       image: 'image/02.jpg',
       date: '2016-8-11',
@@ -116,9 +136,7 @@ export default {
       + '8. 五成热时下泡椒和浆好的肉丝炒开，炒开立刻放葱姜蒜炒香，然后放入焯过的冬笋丝和木耳丝，最后倒入味汁，再炒几下就可以了\n'
 
     }, {
-      username:'duxue',
-      phone:'15809216911',
-      regtime:'2016-8-13',
+      username:'duanxue',
       name: '乌东面',
       image: 'image/04.jpg',
       date: '2016-8-13',
@@ -153,9 +171,7 @@ export default {
       + '8. 五成热时下泡椒和浆好的肉丝炒开，炒开立刻放葱姜蒜炒香，然后放入焯过的冬笋丝和木耳丝，最后倒入味汁，再炒几下就可以了\n'
 
     }, {
-      username:'duxue',
-      phone:'15809216911',
-      regtime:'2016-8-13',
+      username:'duanxue',
       name: '糖醋里脊',
       image: 'image/03.jpg',
       date: '2016-8-15',
@@ -190,9 +206,7 @@ export default {
       + '8. 五成热时下泡椒和浆好的肉丝炒开，炒开立刻放葱姜蒜炒香，然后放入焯过的冬笋丝和木耳丝，最后倒入味汁，再炒几下就可以了\n'
 
     }, {
-      username:'duxue',
-      phone:'15809216911',
-      regtime:'2016-8-13',
+      username:'duanxue',
       name: '冰棍冰棍',
       image: 'image/06.jpg',
       date: '2016-8-19',
@@ -228,8 +242,6 @@ export default {
 
     }, {
       username:'yujuan',
-      phone:'15809216911',
-      regtime:'2016-8-23',
       name: '清蒸鲜鱼',
       image: 'image/07.jpg',
       date: '2016-8-20',
@@ -265,8 +277,6 @@ export default {
 
     }, {
       username:'yujuan',
-      phone:'15809216911',
-      regtime:'2016-8-13',
       name: '红烧鸡腿',
       image: 'image/08.jpg',
       date: '2016-8-21',
@@ -302,9 +312,7 @@ export default {
 
     },
     {
-      username:'duxue',
-      phone:'15809216911',
-      regtime:'2016-8-13',
+      username:'duanxue',
       name: '干锅菜花',
       image: 'image/05.jpg',
       date: '2016-8-22',

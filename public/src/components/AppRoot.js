@@ -1,14 +1,12 @@
 import React,{Component} from 'react';
-import {Link} from 'react-router';
-import Footer from './Footer';
+import Navigate from './Navigate';
 class AppRoot extends Component{
   render(){
     return (
         <div className="appRoot">
-          <p>我是一个导航</p>
+          <Navigate/>
           {this.props.children}
           <div className="clearfix"></div>
-          <Footer/>
         </div>
     );
   }

@@ -1,12 +1,11 @@
 import request from 'superagent';
-
 const userMessageLoadedMiddleware = store=>next=>action=>{
-  switch (action.type){
+  switch(action.type){
     case 'USERMESSAGE_LOADED':
-      request.get('/menus/user/yujuan')
+      request.get(`/menus/userCenter/${action.userName}`)
           .end((err,res)=>{
             next({
-              type:'USERMESSAGE_GETTED',
+              type:'USERMESSAGE_SHOWED',
               data:res.body
             })
           });
