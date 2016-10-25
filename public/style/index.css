@@ -1,3 +1,6 @@
+body{
+    background-image: url('../image/background-img.png');
+}
 .food-body {
     width: 80%;
     margin: auto;
@@ -123,4 +126,13 @@
 }
 
 .modify-userMessage {
+}
+
+/*Navigate*/
+#main-menu {
+    list-style-type: none;
+}
+#main-menu li{
+    float:left;
+    position: relative;
 }

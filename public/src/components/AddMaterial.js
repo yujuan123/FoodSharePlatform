@@ -10,7 +10,7 @@ class AddMaterial extends Component{
     let ip1=this.refs.sourceText.value.trim();
     let ip2=this.refs.amountText.value.trim();
     if(ip1&&ip2){
-      this.props.addMaterial(ip1,ip2);
+      this.props.addMaterial({source:ip1,amount:ip2});
     }
     this.refs.sourceText.value='';
     this.refs.amountText.value='';
@@ -51,8 +51,8 @@ class AddMaterial extends Component{
 }
 const mapStateToProps=(state)=>(state);
 const mapDispatchToProps=(dispatch)=>({
-  addMaterial:(ip1,ip2)=>{
-    dispatch(addMaterial({source:ip1,amount:ip2}))
+  addMaterial:(material)=>{
+    dispatch(addMaterial(material))
   }
 });
 const AddMaterialPackage=connect(mapStateToProps,mapDispatchToProps)(AddMaterial);

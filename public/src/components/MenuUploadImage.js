@@ -5,7 +5,7 @@ import React, {Component} from 'react';// eslint-disable-line no-unused-vars
 import request from 'superagent';
 import {connect} from 'react-redux';
 import {uploadImage} from '../actions/index';
-class MenuUplodeImage extends Component {
+class MenuUploadImage extends Component {
   isClick(){
     let  input=this.refs.file;
     let  img=this.refs.image;
@@ -47,5 +47,5 @@ const mapDispatchToProps=(dispatch)=>(
   }
 }
 );
-const MenuUplodeImagePackage=connect(mapStateToProps,mapDispatchToProps)(MenuUplodeImage);
-export default MenuUplodeImagePackage;
+const MenuUploadImagePackage=connect(mapStateToProps,mapDispatchToProps)(MenuUploadImage);
+export default MenuUploadImagePackage;

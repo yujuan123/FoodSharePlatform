@@ -4,11 +4,11 @@
 import React, {Component} from 'react';// eslint-disable-line no-unused-vars
 import {connect} from 'react-redux';
 import {uploadMenu} from '../actions/index';
-import MenuUplodeImagePackage from './MenuUplodeImage';
+import MenuUploadImagePackage from './MenuUploadImage';
 import AddMaterialPackage from './AddMaterial';
 import MaterialsShowPackage from './MaterialsShow';
 import {getMenuLoaded } from '../actions/index';
-class MenuUplodeApp extends Component {
+class MenuUploadApp extends Component {
   componentDidMount(){
     this.props.getMenuLoaded();
   }
@@ -27,7 +27,7 @@ class MenuUplodeApp extends Component {
       name:name,
       description:description,
       steps:steps,
-      data:date,
+      date:date,
       image:image,
       materials:materials
     };
@@ -41,7 +41,7 @@ class MenuUplodeApp extends Component {
         <h3><b>菜名：</b>
           <input type="text" ref="nameInput"/>
         </h3>
-      <MenuUplodeImagePackage/>
+      <MenuUploadImagePackage/>
       <div style={{margin:'30px auto 50px' }}>
         <h4 className="text-left"><b>简介：</b></h4>
         <textarea className="form-control" rows="2" placeholder="请简单介绍一下你的菜品吧!" style={{overflow:'auto'}} ref="descriptionInput"> </textarea>
@@ -71,5 +71,5 @@ const mapDispatchToProps=(dispatch)=>({
     dispatch(getMenuLoaded());
   }
 });
-const MenuUploadAppPackage=connect(mapStateToProps,mapDispatchToProps)(MenuUplodeApp);
+const MenuUploadAppPackage=connect(mapStateToProps,mapDispatchToProps)(MenuUploadApp);
 export default MenuUploadAppPackage;

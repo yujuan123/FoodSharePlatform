@@ -13,9 +13,14 @@ import MenuDetailAppPackage from './components/MenuDetailApp';
 import HomePage from './components/HomePage';
 import LoginFormPackage from './components/LoginForm';
 //上传
-import MenuUplodeAppPackage from './components/MenuUplodeApp';
+import MenuUploadAppPackage from './components/MenuUploadApp';
 //尚未成形的 userCenterApp
 import UserCenterAppPackage from './components/UserCenterApp';
+
+
+//注册
+import RegisterFormPackage from './components/RegisterForm';
+
 
 //加载中间件
 import menuLoadedMiddleware from './middlewares/menuLoadedMiddleware';
@@ -27,9 +32,10 @@ import menuUploadMiddleware from './middlewares/menuUploadMiddleware';
 //与登录有关
 import sendUserMessageMiddleware from './middlewares/sendUserMessageMiddleware';
 import userWorksLoadedMiddleware from './middlewares/userWorksLoadedMiddleware';
+import sendUsernameMiddleware from './middlewares/sendUsernameMiddleware';
 const store = createStore(
     resultList,
-    applyMiddleware(thunkMiddleware,createLogger(),menuLoadedMiddleware,menuDetailLoadedMiddleware,recentMenuLoadedMiddleware,sendUserMessageMiddleware,userMessageLoadedMiddleware,menuUploadMiddleware,userWorksLoadedMiddleware)
+    applyMiddleware(thunkMiddleware,createLogger(),menuLoadedMiddleware,menuDetailLoadedMiddleware,recentMenuLoadedMiddleware,sendUserMessageMiddleware,userMessageLoadedMiddleware,menuUploadMiddleware,userWorksLoadedMiddleware,sendUsernameMiddleware)
 );
 
 store.dispatch({
@@ -44,8 +50,9 @@ render(
           <Route path="/menu" component={MenuPackage}/>
           <Route path="/menuDetail/:id" component={MenuDetailAppPackage}/>
           <Route path="/login" component={LoginFormPackage}/>
+          <Route path="/register" component={RegisterFormPackage}/>
           <Route path="/userCenter" component={UserCenterAppPackage}/>
-          <Route path="/userUploaded" component={MenuUplodeAppPackage}/>
+          <Route path="/userUploaded" component={MenuUploadAppPackage}/>
         </Route>
       </Router>
     </Provider>,

@@ -26,20 +26,20 @@ router.get('/verifyUserIdentity', (req, res)=> {
   }
 });
 
-router.get('/verifyUserUploadIdentity',(req,res)=>{
-  if(req.cookies.user){
-    Session.findOne({randomId:req.cookies.user},(err,doc)=>{
-      if(err){
+router.get('/verifyUserUploadIdentity', (req, res)=> {
+  if (req.cookies.user) {
+    Session.findOne({randomId: req.cookies.user}, (err, doc)=> {
+      if (err) {
         res.status(500).send('数据库出错!');
       }
-      if(doc&&!err){
+      if (doc && !err) {
         res.status(200).send(doc.username);
       }
     })
-  }else{
+  } else {
     res.status(403).send('');
   }
-  
+
 });
 //返回所有图片并按更新排序
 
@@ -53,6 +53,31 @@ router.get('/homePage', (req, res) => {
   Menu.find({}).sort({_id: -1}).limit(3).exec(function (err, data) {
     res.send(data);
   });
+});
+
+//注册
+router.post('/checkRegister', (req, res)=> {//I Think req
+  User.findOne({username: req.body.username}, (err, doc)=> {
+    if (doc && (!err)) {
+      res.send("该用户已存在");
+    }
+    if(!doc&&(!err)){
+      //保存用户注册信息到用户表
+      new User({
+        username:req.body.username,
+        password:req.body.password,
+        regtime:req.body.regtime
+      }).save((err,doc)=>{
+        if(doc&&!err){
+          res.send("注册成功");//I Think 注册成功后直接调转到 登录页面
+        }
+        if(err){
+          res.send("注册失败");
+        }
+      })
+    }
+    
+  })
 });
 
 //登录时
@@ -110,12 +135,12 @@ router.get('/:id', (req, res)=> {
   })
 });
 
-router.get('/userWorks/:username',(req,res)=>{
-  Menu.find({username:req.params.username},(err,doc)=>{
-    if(err){
+router.get('/userWorks/:username', (req, res)=> {
+  Menu.find({username: req.params.username}, (err, doc)=> {
+    if (err) {
       res.status(501).send("出错了");
     }
-    if(doc&&(!err)){
+    if (doc && (!err)) {
       res.status(200).send(doc);
     }
   })
@@ -127,7 +152,6 @@ router.get('/userCenter/:username', (req, res)=> {
     res.status(200).send(doc);
   })
 });
-
 
 
 module.exports = router;

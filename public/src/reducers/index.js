@@ -14,6 +14,8 @@ import userCenterMessageShowed from './userCenterMessageShowed';
 import userWorksShowed from './userWorksShowed';
 import menuLoadedShowed from './menuLoadedShowed';
 import userCenterRedirect from './userCenterRedirect';
+
+import usernameRepeatShowed from './usernameRepeatShowed';
 const resultList = combineReducers({
     menus,
     menudetails,
@@ -26,7 +28,8 @@ const resultList = combineReducers({
     userCenterMessageShowed,
     userWorksShowed,
     menuLoadedShowed,
-    userCenterRedirect
+    userCenterRedirect,
+    usernameRepeatShowed
 });
 
 export default resultList;
