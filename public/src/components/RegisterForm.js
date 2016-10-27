@@ -36,15 +36,15 @@ class RegisterForm extends Component {
     if (userNameLegaled && passwordLegaled) {
       /*注册获取当前时间*/
       let date = new Date();
-      let regtime = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate();
-      this.props.sendUserName({username: userNameLegaled, password: passwordLegaled,regtime:regtime})
+      let regtime = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+      this.props.sendUserName({username: userNameLegaled, password: passwordLegaled, regtime: regtime})
     }
   }
 
   focus() {
-    this.setState({usernameErr : ''});
-    this.setState({passwordErr : ''});
-    this.setState({vertifyPasswordErr : ''});
+    this.setState({usernameErr: ''});
+    this.setState({passwordErr: ''});
+    this.setState({vertifyPasswordErr: ''});
     this.props.showRegisterErr('');
   }
 
@@ -57,8 +57,10 @@ class RegisterForm extends Component {
 
   render() {
     return (
-        <div>
-          <h1 className='text-center'> 烹然心动 </h1>
+        <div className="food-body">
+          <div>
+            <h1 className='text-center'> 烹然心动 </h1>
+          </div>
           <form>
             <div>
               <input type="text" className="form-control" id="exampleInputEmail" placeholder="用户名" ref="username"
@@ -69,7 +71,7 @@ class RegisterForm extends Component {
             </div>
             <div>
               <input type="password" className="form-control" id="exampleInputPassword" placeholder="密码" ref="password"
-                     default="" onFocus={this.focus.bind(this)} />
+                     default="" onFocus={this.focus.bind(this)}/>
               <label className=" text-danger ">{this.state.passwordErr}</label>
               <br/><br/>
             </div>
@@ -97,8 +99,8 @@ const mapDispatchToProps = (dispatch)=>({
       user
     })
   },
-  showRegisterErr:(data)=>({
-    type:'SHOWREGISTER_ERROR',
+  showRegisterErr: (data)=>({
+    type: 'SHOWREGISTER_ERROR',
     data
   }),
   redirectRegister: ()=> {

@@ -5,7 +5,7 @@ class Footer extends Component{
     return (
         <footer id="footer">
             <div id="gotop">
-              <img src="image/quickToTop.jpg"/>
+              <img src="image/backToTop.jpg"/>
             </div>
         </footer>
     )

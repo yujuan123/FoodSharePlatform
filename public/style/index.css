@@ -1,6 +1,9 @@
 body{
     background-image: url('../image/background-img.png');
 }
+#app{
+    margin-bottom: 60px;
+}
 .food-body {
     width: 80%;
     margin: auto;
@@ -51,6 +54,65 @@ body{
     -o-transition: 150ms ease;
     transition: 150ms ease;
 }
+/*Navigate*/
+#header {
+    display: block;
+    width: 80%;
+    height:100px;
+    margin-bottom: 20px;
+    position: relative
+}
+
+div#logo {
+    height: 28px;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    font-size: 25px;
+    font-family: AlexonBoldRegular, sans-serif;
+    background: url(../image/images/2.jpg) no-repeat 0 50%
+}
+
+div#logo a {
+    line-height: 28px;
+    padding-left: 35px;
+    font-weight: bold;
+    color: #1275ba
+}
+
+div.main-menu-block {
+    position: absolute;
+    right: 0;
+    top: 35px;
+}
+
+ul#main-menu {
+    list-style: none;
+}
+
+ul#main-menu li {
+    float: left;
+    position: relative
+}
+
+ul#main-menu li a {
+    display: block;
+    font: 18px HelveticaLTStdBold, sans-serif;
+    min-width: 100px;
+    height: 40px;
+    text-align: center;
+    line-height: 30px
+}
+
+ul#main-menu li a:hover {
+    color: #1275ba;
+    background: url(../image/images/menu_hover.png) no-repeat;
+}
+
+ul#main-menu li a.active-state {
+    color: #1275ba;
+    background: url(../image/images/menu_hover.png) no-repeat;
+}
 
 /*slideshow */
 #picture-sliding {
@@ -90,10 +152,8 @@ body{
 
 #gotop {
     display: none;
-    width: 55px;
-    height: 55px;
     position: fixed;
-    right: 10px;
+    right:10px;
     bottom: 0px;
 }
 
@@ -135,4 +195,19 @@ body{
 #main-menu li{
     float:left;
     position: relative;
+}
+/*个人中心*/
+.userImg{
+    width:150px;
+    height:155px;
+}
+
+/*login register button align center*/
+.login-wrap{
+    margin-left:auto;
+    margin-right:auto;
+}
+/*link active style*/
+.active{
+    color:green;
 }

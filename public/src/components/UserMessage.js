@@ -32,10 +32,10 @@ class UserMessage extends Component {
     return (
         <div >
           <div className="row">
-            <div className="col-md-4">
+            <div className="col-md-3">
               <img src="image/userImg.jpg" className="img-thumbnail userImg"/>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-3">
               <ul className="userMessage-ul">
                 <li><h1>{username}</h1></li>
                 <li><h5>{phone}</h5></li>
