@@ -11,6 +11,7 @@
     "test": "jasmine",
     "start": "babel-node app.js",
     "webpack": "webpack",
+    "heroku-postbuild": "webpack -p --config ./webpack.prod.config.js --progress",
     "wpw": "webpack -w",
     "coverage": "istanbul cover jasmine",
     "eslint": "eslint app.js server/** public/src/**",
