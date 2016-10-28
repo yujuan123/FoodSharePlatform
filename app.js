@@ -20,7 +20,7 @@ const app = express();
 
 // mongoose.connect('mongodb://localhost/todos');
 
-mongoose.connect(' mongodb://jiamin:dx64192@ds031617.mlab.com:31617/peng');
+mongoose.connect('mongodb://jiamin:dx64192@ds031617.mlab.com:31617/peng');
 
 app.post('/profile', upload.single('avatar'), (req, res)=> {
   res.send({
