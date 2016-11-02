@@ -29,13 +29,15 @@ import recentMenuLoadedMiddleware from './middlewares/recentMenuLoadedMiddleware
 import userMessageLoadedMiddleware from './middlewares/userMessageLoadedMiddleware';
 //上传
 import menuUploadMiddleware from './middlewares/menuUploadMiddleware';
+//删除作品
+import deleteWorkMiddleware from './middlewares/deleteWorkMiddleware';
 //与登录有关
 import sendUserMessageMiddleware from './middlewares/sendUserMessageMiddleware';
 import userWorksLoadedMiddleware from './middlewares/userWorksLoadedMiddleware';
 import sendUsernameMiddleware from './middlewares/sendUsernameMiddleware';
 const store = createStore(
     resultList,
-    applyMiddleware(thunkMiddleware,createLogger(),menuLoadedMiddleware,menuDetailLoadedMiddleware,recentMenuLoadedMiddleware,sendUserMessageMiddleware,userMessageLoadedMiddleware,menuUploadMiddleware,userWorksLoadedMiddleware,sendUsernameMiddleware)
+    applyMiddleware(thunkMiddleware,createLogger(),menuLoadedMiddleware,menuDetailLoadedMiddleware,recentMenuLoadedMiddleware,sendUserMessageMiddleware,userMessageLoadedMiddleware,menuUploadMiddleware,userWorksLoadedMiddleware,sendUsernameMiddleware,deleteWorkMiddleware)
 );
 
 store.dispatch({

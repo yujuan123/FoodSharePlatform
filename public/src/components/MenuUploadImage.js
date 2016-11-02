@@ -14,7 +14,7 @@ class MenuUploadImage extends Component {
       fileObj.onload=function(event){//属性绑定方法
         img.src=event.target.result;
 
-      }
+      };
       fileObj.readAsDataURL(input.files[0]);
     }
     this.handleClick(input.files[0]);

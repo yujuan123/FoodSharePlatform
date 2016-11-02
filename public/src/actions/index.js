@@ -125,3 +125,9 @@ export const uploadMenu=(data)=>{
     data
   };
 };
+export const deleteUserWork=(workId)=>{
+  return {
+    type:'USERWORK_DELETED',
+    workId
+  }
+};

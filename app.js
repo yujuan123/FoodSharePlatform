@@ -18,9 +18,7 @@ const upload = multer({storage: storage});
 
 const app = express();
 
-// mongoose.connect('mongodb://localhost/todos');
-
-mongoose.connect('mongodb://jiamin:dx64192@ds031617.mlab.com:31617/peng');
+ mongoose.connect('mongodb://localhost/todos');
 
 app.post('/profile', upload.single('avatar'), (req, res)=> {
   res.send({
@@ -43,7 +41,7 @@ app.use('*', (req, res)=> {
   res.sendFile(path.resolve('./public/index.html'));
 });
 
-app.listen(process.env.PORT, function() {
+app.listen(3000, function() {
   console.log('server started at http://localhost:3000'); // eslint-disable-line no-console
 });
 

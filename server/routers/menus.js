@@ -153,6 +153,14 @@ router.get('/userCenter/:username', (req, res)=> {
   })
 });
 
+//删除用户作品
+router.delete('/userCenter/:workId',(req,res)=>{
+  Menu.findOneAndRemove({_id:req.params.workId},(err,doc)=>{
+    if(err){
+      res.status(501).send("出错了");
+    }
+  })
+});
 
 module.exports = router;
 

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {loadUserMessage} from '../actions/index';
+
 import UserWorkItem from './UserWorkItem';
 
 //触发带有函数的 action
