@@ -1,0 +1,72 @@
+/***login***/
+/*收获：  知道那个框框其实是个有背景色的 有边框设置的 占据宽度 设置边框距的框框*/
+.login {
+	position:relative;
+	width:724px;
+	background:#fff;
+	margin:14px auto;
+	padding-top:50px;
+	border:1px solid #ccc;
+}
+
+.login .slogan{
+	margin-left:30px;
+	font-size:16px;
+}
+.login .note-register{
+	text-align: center;
+}
+.login-mls{
+	/*width:400px;
+	float:left;*/
+	padding-right:30px;
+}
+
+.login-mls h2 {
+	font-size: 24px;
+	line-height: 54px;
+	border-bottom:1px dashed #ccc;
+}
+.login-mls form{
+	margin-top:26px;
+}
+.login-mls form p {
+	margin-bottom: 16px;
+}
+.login_mls form label {
+	margin-right: 8px;
+	text-align: right;
+	line-height: 22px;
+}
+.login-mls  form input {
+	font-size: 12px;
+		
+}
+#img-bc{
+	width:250px;
+	height:225px;
+}
+
+.login-mls form .submit-box {
+	margin-left: 40px;
+	margin-top: 14px;
+	margin-bottom: 14px;
+	line-height: 30px;
+}
+.login-mls form .submit-box .button {
+	-moz-border-radius:3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	cursor: pointer;
+	background: #ff6699;
+	color: #ffffff;
+	border: none;
+	font-size: 14px;
+	font-weight: bold;
+	margin-right: 10px;
+	padding: 4px 10px;
+	width: 100px;
+}
+/***login结束**/
+
+

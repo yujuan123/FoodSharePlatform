@@ -4,12 +4,13 @@ import {withRouter} from 'react-router';
 
 import {sendUserInfor} from '../actions/index';
 import {hideLoginErrInfor} from '../actions/index';
+import {Link} from 'react-router';
 
 class LoginForm extends Component {
   click() {
-    var username = this.refs.username.value.trim();
-    var password = this.refs.password.value.trim();
-    console.log(username);
+    var username = this.refs.user.value.trim();
+    var password = this.refs.pass.value.trim();
+    console.log(username+"以及"+password);
     this.props.sendUserMessage({
       username: username,
       password: password
@@ -31,26 +32,33 @@ class LoginForm extends Component {
 
   render() {
     return (
-        <div className="food-body ">
-          <div >
-            <h1 className='text-center'> 烹然心动 </h1>
+        <div className="login clearfix container">
+          <div className="col-md-6">
+            <div><img src="image/3.jpg" id="img-bc"/></div>
+            <div><p className="slogan">家常美味，也是人生百味</p></div>
           </div>
-          <form id="homePage-form" >
-            <div className="form-group">
-              <input type="text" className="form-control" id="exampleInputEmail1" placeholder="用户名" ref="username"
-                     onFocus={this.handleFocus.bind(this)}/>
-            </div>
-            <div className="form-group">
-              <input type="password" className="form-control" id="exampleInputPassword1" placeholder="密码" ref="password"
-                     onFocus={this.handleFocus.bind(this)}/>
-              <span>{this.props.loginErrShowed}</span>
-            </div>
-            <div className="login-wrap">
-              <button type="button"  className="btn btn-success " onClick={this.click.bind(this)}>登 录
-              </button>
-            </div>
-          </form>
+          <div className="login-mls col-md-6">
+            <h2>烹然心动</h2>
+            <form id="loginForm">
+
+              <div className="form-group">
+                <label htmlFor="mlsUser">账&nbsp;&nbsp;&nbsp;&nbsp;号：</label>
+                <input type="text"  className="form-control" placeholder="用户名" ref="user" onFocus={this.handleFocus.bind(this)}/>
+              </div>
+              <div className="form-group">
+                <label htmlFor="mlsPass">密&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
+                <input type="password" className="form-control" placeholder="密码" ref="pass" onFocus={this.handleFocus.bind(this)}/>
+                <span>{this.props.loginErrShowed}</span>
+              </div>
+              <div className="submit-box">
+                <button type="button"  className="btn btn-success " onClick={this.click.bind(this)}>登 录
+                </button>
+              </div>
+            </form>
+          </div>
+          <p className="note-register">还没有账号？&nbsp;<Link to="/register">立即注册</Link></p>
         </div>
+
     )
   }
 }

@@ -1,5 +1,8 @@
-body{
+/*body{
     background-image: url('../image/background-img.png');
+}*/
+#login-form{
+    background-image: url(../image/loginBc.jpg);
 }
 #app{
     margin-bottom: 60px;
@@ -211,3 +214,6 @@ ul#main-menu li a.active-state {
 .active{
     color:green;
 }
+
+
+
